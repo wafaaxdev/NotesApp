@@ -1,0 +1,34 @@
+
+{% extends 'base.html' %}
+{% load static %}
+
+{% block body %}
+<div class="row">
+    <div class="add_form">
+        <div class="container">
+            <center>
+            {% if profile.img %}
+                <img src="{{profile.img.url}}" name="aboutme" width="140" height="140" border="0" class="img-circle"></a>
+            {% else %}
+                <img src=" {% static 'img/avatar.png' %} " name="aboutme" width="140" height="140" border="0" class="img-circle"></a>
+            {% endif %}
+                <h3 class="media-heading">{{profile.user}} <small>USA</small></h3>
+                <span><strong>Skills: </strong></span>
+                    <span class="label label-warning">HTML5/CSS</span>
+                    <span class="label label-info">Adobe CS 5.5</span>
+                    <span class="label label-info">Microsoft Office</span>
+                    <span class="label label-success">Windows XP, Vista, 7</span>
+                </center>
+                <hr>
+                <center>
+                <p class="text-left"><strong>Bio: </strong><br>
+                    {{profile.bio}}</p>
+                <br>
+            </center>
+    <a href="{% url 'accounts:edit_profile' profile.slug %}">Edit Profile</a> <br>
+    <a href="{% url 'accounts:change_password' profile.slug %}">Change Password</a>
+        </div>
+    </div>
+</div>
+    
+    {% endblock body %}

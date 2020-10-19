@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% load bootstrap4 %}
+{% load static %}
+
+{% block body %}
+<div class="row">
+    <div class="add_form">
+    <h3>Login</h3>
+    <form action="" method="post" >
+        {% csrf_token %}
+    
+       <label for="">Username</label><input type="text" name="username""><br>
+       <label for="">Password </label><input type="password" name="password"><br>
+        {% buttons %}
+            <button type="submit" class="btn btn-primary">
+            Login
+            </button>
+        {% endbuttons %}
+    </form>
+    </div>
+    </div>
+              
+{% endblock body %}
+            
+            

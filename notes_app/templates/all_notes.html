@@ -1,0 +1,10 @@
+<h1> Welcome in Django with wafa </h1>
+
+<h3>Our notes</h3>
+ <a href="{% url 'noteeeee:add_notes' %}">Add note</a>
+<br>
+<hr> 
+{% for note in all_notes  %}
+   <a href="{% url 'noteeeee:note_details' note.slug  %}"> {{note}}</a>   
+   <br>
+{% endfor %}

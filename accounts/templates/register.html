@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+
+{% block body %}
+<div class="row">
+    <div class="add_form">
+     <h3>Signup</h3>
+<form action="" method="post">
+    {% csrf_token %}
+    <label for="">First name</label><input type="text" name="first_name"><br>
+    <label for="">Last name</label><input type="text" name="last_name"><br>
+    <label for="">e-mail</label><input type="email" name="email"><br>
+    <label for="">Username</label><input type="text" name="username"><br>
+    <label for="">Password</label><input type="password" name="password1"><br>
+    <label for="">Confirm password</label><input type="password" name="password2"><br>
+    <input type="submit" class="btn btn-primary" value="Signup">
+</div>
+</div>
+</form>
+    
+{% endblock body %}
